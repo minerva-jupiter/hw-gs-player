@@ -2,8 +2,7 @@
 </script>
 
 <template>
-  <h1>Info</h1>
-  <img alt="Vue logo" src="../assets/logo.png"/>
+  <h1>Album List</h1>
 </template>
 
 <style scoped>

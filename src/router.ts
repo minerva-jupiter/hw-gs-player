@@ -1,10 +1,14 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import TopView from "./components/TopView.vue";
-import InfoView from "./components/InfoView.vue";
+import TopView from "./components/AlbumList.vue";
+import About from "./components/About.vue";
+import Terms from './components/Terms.vue';
+import Enquiries from './components/Enquiries.vue';
 
 const routes = [
     {path: '/', name: 'top', component: TopView},
-    {path: '/info', name: 'info', component: InfoView},
+    {path: '/about', name: 'about', component: About},
+    {path: '/terms', name: 'terms', component: Terms},
+    {path: '/enquiries', name: 'enquiries', component: Enquiries},
 ]
 
 const router = createRouter({
