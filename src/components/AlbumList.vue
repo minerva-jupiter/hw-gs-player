@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <h1>Album List</h1>
+  <div class="container">
+    <h1>Album List</h1>
+  </div>
 </template>
 
 <style scoped>
