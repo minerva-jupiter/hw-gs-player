@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  let MenuButton: Boolean = true;
+import Player from './components/Player.vue';
+  let MenuButton: Boolean = true; //MenuButtonがTrueのときのみメニューを表示(今はハンバーガーメニューが動作しないので常時true)
 </script>
 
 <template>
@@ -24,4 +25,5 @@
     </nav>
   </header>
   <router-view/>
+  <Player/>
 </template>
