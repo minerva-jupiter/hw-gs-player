@@ -4,6 +4,7 @@
     "": {
       "name": "gs-player",
       "dependencies": {
+        "@vue-youtube/component": "^0.0.6",
         "@vue-youtube/core": "^0.0.6",
         "vue": "3.5.13",
         "vue-router": "^4.5.0",
@@ -125,6 +126,8 @@
     "@volar/source-map": ["@volar/source-map@2.4.12", "", {}, "sha512-bUFIKvn2U0AWojOaqf63ER0N/iHIBYZPpNGogfLPQ68F5Eet6FnLlyho7BS0y2HJ1jFhSif7AcuTx1TqsCzRzw=="],
 
     "@volar/typescript": ["@volar/typescript@2.4.12", "", { "dependencies": { "@volar/language-core": "2.4.12", "path-browserify": "^1.0.1", "vscode-uri": "^3.0.8" } }, "sha512-HJB73OTJDgPc80K30wxi3if4fSsZZAOScbj2fcicMuOPoOkcf9NNAINb33o+DzhBdF9xTKC1gnPmIRDous5S0g=="],
+
+    "@vue-youtube/component": ["@vue-youtube/component@0.0.6", "", { "dependencies": { "@vue-youtube/core": "0.0.6", "@vue-youtube/shared": "0.0.6", "vue-demi": "*" }, "peerDependencies": { "@vue/composition-api": "^1.7.2", "vue": "^2.7.0 || >=3.0.0" }, "optionalPeers": ["@vue/composition-api"] }, "sha512-Ouv7VJy8r//F9gE8Y1H2M0d4IQmOtZh8I79ttgsAGge3a/AdtXzSBVJ7ijhCAH4ZNulkhsN3CO46V/ReW5mwKA=="],
 
     "@vue-youtube/core": ["@vue-youtube/core@0.0.6", "", { "dependencies": { "@vue-youtube/shared": "0.0.6", "vue-demi": "latest" }, "peerDependencies": { "@vue/composition-api": "^1.7.2", "vue": "^2.7.0 || >=3.0.0" }, "optionalPeers": ["@vue/composition-api"] }, "sha512-3bqs41WCP1901vv7EXxYD0/mKhhjq6YA3r9Lhr0wyFV+UHPLyxcZZ50yUtkXn1cIr9Pz0DRzEGwi65Quj94Pmg=="],
 

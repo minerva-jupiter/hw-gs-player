@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { YoutubeIframe } from '@vue-youtube/component';
 import { ref, computed, onUnmounted } from 'vue';
+import queue from '../queue';
 
-const videoId = ref('1QkKDY1-NN0');
+let videoId = ref('1QkKDY1-NN0');
 const player = ref<any>(null);
 const nowTime = ref(0);
 const endTime = ref(0);
@@ -10,7 +11,9 @@ const title = ref();
 const titleName = ref();
 const intervalId = ref<number | null>(null);
 const isPlaying = ref(false);
+let albumTitle = queue.get_albumTitle();
 
+let next_song;
 const togglePlay = async () => {
   player.value?.togglePlay(); // change play-pause
 };
@@ -24,18 +27,34 @@ const onReady = (event: { target: any }) => {
 
 // When the playback state is changed
 const onStateChange = (event: { target: any; data: number }) => {
+  console.log("onStateChange");
   if (event.data === 1) { // start
+    console.log("start(1)");
     isPlaying.value = true; // play-pause-button
     intervalId.value = window.setInterval(() => { // Get current time per 250ms
       nowTime.value = Math.floor(event.target.getCurrentTime());
     }, 250);
-  } else if (event.data === 2 || event.data === 0) { // stop (2) or end (0)
+  } else if (event.data === 0) { // end(0)
+    console.log("end(0)");
+    next_song = queue.get_next();
+    if(next_song == null){ //check queue whather exist next song
+      isPlaying.value = false;
+      if(intervalId.value !== null) {
+        clearInterval(intervalId.value);
+        intervalId.value = null;
+      }
+    }else{
+      videoId = ref(next_song)
+    }
+  } else if (event.data === 2) { // stop (2)
+    console.log(2);
     isPlaying.value = false; // play-pause-button
     if (intervalId.value !== null) {
       clearInterval(intervalId.value);
       intervalId.value = null;
     }
   }
+  albumTitle = queue.get_albumTitle();
 };
 
 // Format to mm:ss
@@ -75,7 +94,7 @@ onUnmounted(() => {
       @state-change="onStateChange" />
     <div class="info_box">
       <div class="title">{{ titleName }}</div>
-      <div class="album">album name</div>
+      <div class="album">{{albumTitle}}</div>
       <div class="time_container">
         <div class="nowtime">{{ formattedNowTime }}</div>
         <div class="endtime">{{ formattedEndTime }}</div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from "vue";
-
+import Player from "./components/Player.vue";
 const MenuButton = ref(false);
 
 const closeMenu = (event: Event) => {
