@@ -1,14 +1,26 @@
+/*
+This Script manage the queue for play.
+*/
+
+
 let queue: string[] = [];
+let albumTitle: string = "Unknown Album";
+let nextSong;
+
+function get_albumTitle(): string {
+    return albumTitle;
+}
 
 function get_next(): (string|null) {
     if(queue.length == 0){
+        console.log("queue was ended");
         return null;
-    }else
-    return queue[0];
-};
-
-function add_last(VideoId: string) {
-    queue.push(VideoId);
+    }else{
+    nextSong = queue[0];
+    queue.shift();
+    console.log("i will play" + nextSong);
+    return nextSong;
+    }
 };
 
 function add_album(VideoIdArray: string[]) {
@@ -17,6 +29,12 @@ function add_album(VideoIdArray: string[]) {
 
 function del_all() {
    queue = [];
+   albumTitle = "Unknown Album";
 };
 
-export default {get_next, add_last, add_album, del_all};
+function interrupt(VideoIdArray: string[]) {
+    queue = VideoIdArray;
+};
+
+
+export default {get_albumTitle, get_next, add_album, del_all, interrupt};
