@@ -46,6 +46,5 @@ onBeforeUnmount(() => {
       </div>
     </nav>
   </header>
-  <router-view/>
-  <Player/>
+  <router-view />
 </template>

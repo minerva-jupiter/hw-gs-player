@@ -14,7 +14,6 @@ const isPlaying = ref(false);
 let albumTitle = queue.get_albumTitle();
 
 let next_song;
-
 const togglePlay = async () => {
   player.value?.togglePlay(); // change play-pause
 };
