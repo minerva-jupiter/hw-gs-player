@@ -11,4 +11,12 @@ function add_last(VideoId: string) {
     queue.push(VideoId);
 };
 
-export default get_next add_last;
+function add_album(VideoIdArray: string[]) {
+    queue = VideoIdArray;
+}
+
+function del_all() {
+   queue = [];
+};
+
+export default {get_next, add_last, add_album, del_all};
