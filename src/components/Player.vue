@@ -95,7 +95,6 @@ onUnmounted(() => {
 });
 
 const renderKey = queue.get_playerRenderKey();
-
 </script>
 
 <template>
@@ -142,6 +141,10 @@ const renderKey = queue.get_playerRenderKey();
     <button @click="queue.onLoopButton()">
       LoopButton
     </button>
+    Queue
+    <div v-for="(SongName, index) in queue.get_queueTitleList()">
+      {{ index }} : {{ SongName }}
+    </div>   
   </div>
 </template>
 
