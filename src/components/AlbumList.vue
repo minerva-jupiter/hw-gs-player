@@ -11,7 +11,7 @@ function add_play_album(albumIndex: number) {
 </script>
 
 <template>
-  <div class="container">
+  <div class="page">
     <h1>Album List</h1>
     <div v-for="(AlbumList, index) in AlbumList">
       <button

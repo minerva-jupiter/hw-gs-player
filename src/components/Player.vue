@@ -22,6 +22,15 @@ const isAnimating = ref(false);
 const SCROLL_SPEED = 40; // px/s
 const WAIT_TIME = 2000; // ms
 
+
+const isFullscreen = ref(false);
+
+const toggleFullscreen = () => {
+  isFullscreen.value = !isFullscreen.value;
+};
+
+
+
 const togglePlay = async () => {
   player.value?.togglePlay(); // Change play-pause
 };
@@ -98,7 +107,7 @@ const renderKey = queue.get_playerRenderKey();
 </script>
 
 <template>
-  <div class="container" :key="renderKey">
+  <div :class="{ 'container': !isFullscreen, 'fscontainer': isFullscreen }" :key="renderKey">
     <youtube-iframe
       :video-id=queue.get_nowSong()
       :player-vars="{
@@ -146,7 +155,19 @@ const renderKey = queue.get_playerRenderKey();
       {{ index }} : {{ SongName }}
     </div>   
   </div>
+  <button @click="toggleFullscreen" class="toggle-btn">
+        {{ isFullscreen ? '通常表示' : 'フルスクリーン' }}
+      </button>
 </template>
 
 <style scoped>
+.toggle-btn {
+  position: fixed;
+  bottom: 90px;
+  background: #4c4c4c;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
 </style>
