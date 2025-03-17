@@ -139,6 +139,9 @@ const renderKey = queue.get_playerRenderKey();
         <div class="bar bar-right"></div>
       </div>
     </button>
+    <button @click="queue.onLoopButton()">
+      LoopButton
+    </button>
   </div>
 </template>
 
