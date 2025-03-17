@@ -2,16 +2,20 @@
 This Script manage the queue for play.
 */
 
+import { ref } from "vue";
+
 
 let queue: string[] = [];
 let albumTitle: string = "Unknown Album";
 let nextSong;
+let playerRenderKey = ref(0);
 
 function get_albumTitle(): string {
     return albumTitle;
 }
 
 function get_next(): (string|null) {
+    console.log("get_next was called");
     if(queue.length == 1){
         console.log("queue was ended");
         return null;
@@ -19,22 +23,19 @@ function get_next(): (string|null) {
     nextSong = queue[1];
     queue.shift();
     console.log("i will play" + nextSong);
+    playerRenderKey.value += 1;
     return nextSong;
     }
 };
 
-function get_nowSong(): (string|null) {
-    if(queue.length == 0){
-        console.log("Queue is empty now.");
-        return null;
-    }else{
-        return queue[0];
-    }
+function get_nowSong(): (string) {
+    return queue[0];
 }
 
 function add_album(VideoIdArray: string[],AlbumTitle: string) {
     queue = VideoIdArray;
     albumTitle = AlbumTitle;
+    playerRenderKey.value += 1;
 }
 
 function del_all() {
@@ -46,4 +47,8 @@ function interrupt(VideoIdArray: string[]) {
     queue = VideoIdArray;
 };
 
-export default {get_albumTitle, get_next, get_nowSong, add_album, del_all, interrupt};
+function get_playerRenderKey()  {
+    return playerRenderKey;
+}
+
+export default {get_albumTitle, get_next, get_nowSong, add_album, del_all, interrupt, get_playerRenderKey};

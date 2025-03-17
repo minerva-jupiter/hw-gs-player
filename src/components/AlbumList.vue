@@ -2,7 +2,7 @@
 import AlbumList from '../assets/AlbumsList.json';
 import queue from '../queue';
 function add_play_album(albumIndex: number) {
-  console.log("The Album will play! The Album index is" + albumIndex);
+  console.log("The Album will play! The Album index is " + albumIndex);
   const albumSongList = AlbumList[albumIndex].songs.map((songs) => songs.videoId)
   queue.add_album(albumSongList,AlbumList[albumIndex].albumTitle.ja);// *.ja will change depends on using languare
 }
