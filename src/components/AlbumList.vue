@@ -2,14 +2,12 @@
 import AlbumList from '../assets/AlbumsList.json';
 import queue, { type Queue } from '../queue';
 
-let albumArtsPath = '/public/AlbumArts/default.png';
 function add_play_album(albumIndex: number) {
   console.log("The Album will play! The Album index is " + albumIndex);
   const albumSongList: Queue[] = AlbumList[albumIndex].songs.map((songs) => {
     const queueinter: Queue = {videoId: songs.videoId, SongName: songs.title.ja}
     return queueinter;});
   queue.add_album(albumSongList,AlbumList[albumIndex].albumTitle.ja);// *.ja will change depends on using languare
-  albumArtsPath = "/public/AlbumArts/"+AlbumList[albumIndex].albumArt;
 }
 </script>
 
