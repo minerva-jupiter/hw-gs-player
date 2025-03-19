@@ -39,8 +39,13 @@ function get_next(): (string | null) {
     };
 };
 
-function get_nowSong(): (string) {
-    return queue[0].videoId;
+function get_nowSong(): (string|undefined) {
+    console.log("get_nowSong");
+    if(queue.length < 1){
+        return undefined 
+    }else{
+        return queue[0].videoId
+    }
 }
 
 function add_album(Album: Queue[], AlbumTitle: string) {
@@ -56,6 +61,7 @@ function del_all() {
 };
 
 function get_playerRenderKey() {
+    console.log("get_playerRenderKey");
     return playerRenderKey;
 }
 

@@ -1,27 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref } from "vue";
 import Player from "./components/Player.vue";
 const MenuButton = ref(false);
-
-const closeMenu = (event: Event) => {
-  const target = event.target as HTMLElement;
-  if (!target.closest(".menu") && !target.closest(".hamburger_btn")) {
-    MenuButton.value = false;
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("click", closeMenu);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("click", closeMenu);
-});
 </script>
 
 <template>
   <header>
-    <nav>
       <div class="title_bar">
         <p><router-link to="/">GS Player</router-link></p>
       </div>
@@ -43,8 +27,7 @@ onBeforeUnmount(() => {
           <li><router-link to="/info" @click="MenuButton = false">運営者情報</router-link></li>
         </ul>
       </div>
-    </nav>
   </header>
-  <router-view />
+  <router-view></router-view>
   <Player/>
 </template>

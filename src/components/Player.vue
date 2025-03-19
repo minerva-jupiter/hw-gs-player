@@ -119,7 +119,7 @@ const renderKey = queue.get_playerRenderKey();
       @ready="onReady" 
       @state-change="onStateChange" />
     <div class="info_box">
-      <div class="title" @click="toggleFullscreen">
+      <div class="title" @click.stop="toggleFullscreen">
         <div ref="titleElement"
             class="scroll-container"
             :class="{ scrolling: isAnimating }"
