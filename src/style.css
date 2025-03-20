@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   background: #000000;
   -webkit-text-size-adjust: none;
+  user-select: none;
 }
 
 
@@ -32,6 +33,7 @@ body {
   background-color: #1f1f1f;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
+  z-index: -10;
 }
 
 .title_bar p {
@@ -55,7 +57,7 @@ body {
   width: 80px;
   height: 55px;
   cursor: pointer;
-  z-index: 50;
+  z-index: -10;
 }
 
 .hamburger_btn .line {
@@ -109,6 +111,7 @@ body {
   font-weight: 500;
   transform: translateX(100%);
   transition: transform 0.4s ease;
+  z-index: -10;
 }
 
 .menu.open {
@@ -156,7 +159,6 @@ body {
 
 .fscontainer iframe {
   position: relative;
-  top: 55px;
   margin-bottom: 5px;
   width: 100%;
   max-width: 500px;
