@@ -7,7 +7,7 @@ const queueTitleList = computed(() => queue.get_queueTitleList());
 
 <template>
   <div class="page">
-    <h1>Tracklist</h1>
+    <h1>{{ $t('menu.tracklist') }}</h1>
     <table>
       <tbody>
         <tr v-for="(Title, index) in queueTitleList" :key="index">

@@ -10,5 +10,8 @@
     "policy": "隐私政策",
     "enquiries": "查询",
     "info": "运营者信息"
+  },
+  "album": {
+    "favorite": "我的最爱"
   }
 }

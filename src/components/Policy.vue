@@ -1,5 +1,5 @@
 <template>
   <div class="page">
-    <h1>プライバシーポリシー</h1>
+    <h1>{{ $t('menu.policy') }}</h1>
   </div>
 </template>

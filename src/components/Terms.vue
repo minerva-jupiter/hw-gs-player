@@ -1,5 +1,5 @@
 <template>
   <div class="page">
-    <h1>利用規約</h1>
+    <h1>{{ $t('menu.terms') }}</h1>
   </div>
 </template>

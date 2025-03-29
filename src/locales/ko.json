@@ -10,5 +10,8 @@
     "policy": "개인정보 보호정책",
     "enquiries": "문의",
     "info": "운영자 정보"
+  },
+  "album": {
+    "favorite": "즐겨찾기"
   }
 }

@@ -1,5 +1,5 @@
 <template>
   <div class="page">
-    <h1>運営者情報</h1>
+    <h1>{{ $t('menu.info') }}</h1>
   </div>
 </template>
