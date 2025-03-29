@@ -36,7 +36,6 @@ function add_play_album(albumIndex: number) {
 
 <template>
   <div class="page">
-    <h1>Album List</h1>
     <div class="album-container">
       <div v-for="(AlbumList, index) in AlbumList">
         <button

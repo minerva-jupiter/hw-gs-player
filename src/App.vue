@@ -4,6 +4,8 @@ import Player from "./components/Player.vue";
 import FlagIcon from 'vue3-flag-icons'
 import { useI18n } from 'vue-i18n';
 import { screenSaver } from "./screen-saver";
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiPlaylistMusic } from '@mdi/js';
 
 const MenuButton = ref(false);
 const isFullscreen = ref(false);
@@ -49,6 +51,9 @@ onBeforeUnmount(() => {
       <div class="title_bar">
         <p><router-link to="/">{{ $t('appTitle.name') }}</router-link></p>
       </div>
+      <div class="tracklist_btn">
+        <router-link to="/tracklist"><SvgIcon type="mdi" :path="mdiPlaylistMusic" /></router-link>
+      </div>
       <div class="hamburger_btn" @click.stop="MenuButton = !MenuButton">
         <span class="line line_01" :class="{ 'btn_line01': MenuButton }"></span>
         <span class="line line_02" :class="{ 'btn_line02': MenuButton }"></span>
@@ -56,9 +61,6 @@ onBeforeUnmount(() => {
       </div>
       <div class="menu" :class="{ open: MenuButton }">
         <ul>
-          <li><router-link to="/" @click="MenuButton = false">{{ $t('menu.top') }}</router-link></li>
-          <li><router-link to="/tracklist" @click="MenuButton = false">{{ $t('menu.tracklist') }}</router-link></li>
-          <hr>
           <li><router-link to="/about" @click="MenuButton = false">{{ $t('menu.about') }}</router-link></li>
           <li><router-link to="/terms" @click="MenuButton = false">{{ $t('menu.terms') }}</router-link></li>
           <li><router-link to="/policy" @click="MenuButton = false">{{ $t('menu.policy') }}</router-link></li>

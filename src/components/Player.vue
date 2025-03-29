@@ -169,11 +169,11 @@ const renderKey = queue.get_playerRenderKey();
         <div class="time_container">
           <div class="nowtime">{{ formattedNowTime }}</div>
           <div class="endtime">{{ formattedEndTime }}</div>
-          <div class="album">{{ albumTitle }}</div>
+          <div class="album" @click="toggleFullscreen">{{ albumTitle }}</div>
         </div> 
 
         <div class="fs_album_container">
-          <div class="fs_album">{{ albumTitle }}</div>
+          <div class="fs_album" @click="toggleFullscreen">{{ albumTitle }}</div>
           <div class="fs_loop" @click="queue.onLoopButton()">
             <SvgIcon type="mdi" :path="queue.isLoop.value ? mdiRepeatOnce : mdiRepeatOff" />
           </div>

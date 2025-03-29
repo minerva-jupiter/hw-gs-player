@@ -36,7 +36,7 @@ body {
 .page {
   position: absolute;
   top: 55px;
-  padding: 20px;
+  padding: 10px;
   z-index: -100;
 }
 
@@ -88,12 +88,30 @@ body {
 }
 
 
+.tracklist_btn {
+  position: fixed;
+  top: 0;
+  right: 50px;
+  width: 60px;
+  height: 5px;
+  cursor: pointer;
+  z-index: -10;
+  padding: 5.5px;
+}
+
+.tracklist_btn svg {
+  width: 40px;
+  height: 40px;
+  color: #999999;
+}
+
+
 /* hamburger button */
 .hamburger_btn {
   position: fixed;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 70px;
   height: 55px;
   cursor: pointer;
   z-index: -10;
@@ -104,7 +122,7 @@ body {
   top: 0;
   right: 25px;
   width: 28px;
-  height: 2px;
+  height: 3.5px;
   background: #999999;
   text-align: center;
   transition: 0.4s ease;
@@ -115,8 +133,7 @@ body {
 }
 
 .hamburger_btn .line_02 {
-  top: 26px;
-  height: 2.5px;
+  top: 25.5px;
 }
 
 .hamburger_btn .line_03 {
@@ -125,7 +142,7 @@ body {
 
 /* hamburger button -transform */
 .btn_line01 {
-  transform: translateY(10px) rotate(-45deg)
+  transform: translateY(10px) rotate(-45deg) scale(1.1);
 }
 
 .btn_line02 {
@@ -133,7 +150,7 @@ body {
 }
 
 .btn_line03 {
-  transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-10px) rotate(45deg) scale(1.1);
 }
 
 

@@ -21,6 +21,11 @@ const queueTitleList = computed(() => queue.get_queueTitleList());
 
 <style scoped>
 /* default style */
+.page{
+  padding: 20px;
+  transition: opacity 0.3s ease-in-out;
+}
+
 h1{
   font-size: 24px;
   padding-bottom: 10px;
