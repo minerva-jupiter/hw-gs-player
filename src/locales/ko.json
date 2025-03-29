@@ -11,6 +11,9 @@
     "enquiries": "문의",
     "info": "운영자 정보"
   },
+  "popup": {
+    "reloadMessage": "언어 변경을 완전히 적용하려면 페이지를 다시 불러와야 합니다."
+  },
   "album": {
     "favorite": "즐겨찾기"
   }

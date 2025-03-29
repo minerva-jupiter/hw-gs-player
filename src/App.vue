@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import Player from "./components/Player.vue";
-import FlagIcon from 'vue3-flag-icons'
+import FlagIcon from 'vue3-flag-icons';
 import { useI18n } from 'vue-i18n';
 import { screenSaver } from "./screen-saver";
 import SvgIcon from '@jamescoyle/vue-icon';
@@ -9,6 +9,7 @@ import { mdiPlaylistMusic } from '@mdi/js';
 
 const MenuButton = ref(false);
 const isFullscreen = ref(false);
+const showReloadPopup = ref(false);
 
 const closeMenu = (event: Event) => {
   const target = event.target as HTMLElement;
@@ -21,6 +22,11 @@ const { locale, t } = useI18n();
 const changeLanguage = (lang: string) => {
   locale.value = lang;
   localStorage.setItem("selectedLanguage", lang);
+  showReloadPopup.value = true;
+
+  setTimeout(() => {
+    showReloadPopup.value = false;
+  }, 3000);
 };
 
 const updateBodyClass = () => {
@@ -73,12 +79,48 @@ onBeforeUnmount(() => {
           <button class="language_btn" @click="changeLanguage('zh')"><FlagIcon code="cn" size="20" /></button>
           <button class="language_btn" @click="changeLanguage('ko')"><FlagIcon code="kr" size="20" /></button>
         </div>
-        
       </div>
     </nav>
   </header>
-  <div id="screenSaver" class="screen-saver">
-  </div>
+  <div id="screenSaver" class="screen-saver"></div>
   <router-view />
   <Player :isFullscreen="isFullscreen" @update:isFullscreen="isFullscreen = $event" />
+
+  <div v-if="showReloadPopup" class="reload-popup">
+    <p>{{ $t('popup.reloadMessage') }}</p>
+  </div>
 </template>
+
+<style scoped>
+.reload-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fade-in-out 3s forwards;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+</style>

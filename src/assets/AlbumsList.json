@@ -1,53 +1,265 @@
 [
   {
-    "albumTitleKey": "album.album1",
+    "albumArt": "/AlbumArts/1.png",
+    "albumTitleKey": "album.1",
     "songs": [
       {
-        "titleKey": "song.song1",
-        "videoId": "QcrxntJERRs"
+        "titleKey": "song.1-1",
+        "videoId": "W9kVvPluPy4"
       },
       {
-        "titleKey": "song.song2",
-        "videoId": "BrpIRBW4g0A"
+        "titleKey": "song.1-2",
+        "videoId": "LgbRN-Dh0Dw"
+      },
+      {
+        "titleKey": "song.1-3",
+        "videoId": "tHWQglLvr4U"
+      },
+      {
+        "titleKey": "song.1-4",
+        "videoId": "T8S0rpmd8As"
+      },
+      {
+        "titleKey": "song.1-5",
+        "videoId": "Ui7L0VZqAT0"
+      },
+      {
+        "titleKey": "song.1-6",
+        "videoId": "fFaNq--7qu4"
+      },
+      {
+        "titleKey": "song.1-7",
+        "videoId": "R0m22kEpEis"
+      },
+      {
+        "titleKey": "song.1-8",
+        "videoId": "P6B6Eq1-_wg"
+      },
+      {
+        "titleKey": "song.1-9",
+        "videoId": "2lma93X4Wzk"
+      },
+      {
+        "titleKey": "song.1-10",
+        "videoId": "u5wg0Jsg-HA"
+      },
+      {
+        "titleKey": "song.1-11",
+        "videoId": "flWG_aJpbEA"
+      },
+      {
+        "titleKey": "song.1-12",
+        "videoId": "IKUlZj9Jb74"
+      },
+      {
+        "titleKey": "song.1-13",
+        "videoId": "acAhqYmGy2Q"
+      },
+      {
+        "titleKey": "song.1-14",
+        "videoId": "orwVmkm4EGc"
+      },
+      {
+        "titleKey": "song.1-15",
+        "videoId": "871_IRW81ME"
       }
     ]
   },
   {
-    "albumTitleKey": "album.album2",
+    "albumArt": "/AlbumArts/2.png",
+    "albumTitleKey": "album.2",
     "songs": [
       {
-        "titleKey": "song.songA",
-        "videoId": "L_jWHffIx5E"
+        "titleKey": "song.2-1",
+        "videoId": "W9kVvPluPy4"
+      },
+      {
+        "titleKey": "song.2-2",
+        "videoId": "LgbRN-Dh0Dw"
+      },
+      {
+        "titleKey": "song.2-3",
+        "videoId": "tHWQglLvr4U"
+      },
+      {
+        "titleKey": "song.2-4",
+        "videoId": "T8S0rpmd8As"
+      },
+      {
+        "titleKey": "song.2-5",
+        "videoId": "Ui7L0VZqAT0"
+      },
+      {
+        "titleKey": "song.2-6",
+        "videoId": "fFaNq--7qu4"
+      },
+      {
+        "titleKey": "song.2-7",
+        "videoId": "R0m22kEpEis"
+      },
+      {
+        "titleKey": "song.2-8",
+        "videoId": "P6B6Eq1-_wg"
+      },
+      {
+        "titleKey": "song.2-9",
+        "videoId": "2lma93X4Wzk"
+      },
+      {
+        "titleKey": "song.2-10",
+        "videoId": "u5wg0Jsg-HA"
+      },
+      {
+        "titleKey": "song.2-11",
+        "videoId": "flWG_aJpbEA"
+      },
+      {
+        "titleKey": "song.2-12",
+        "videoId": "IKUlZj9Jb74"
+      },
+      {
+        "titleKey": "song.2-13",
+        "videoId": "acAhqYmGy2Q"
+      },
+      {
+        "titleKey": "song.2-14",
+        "videoId": "orwVmkm4EGc"
+      },
+      {
+        "titleKey": "song.2-15",
+        "videoId": "871_IRW81ME"
       }
     ]
   },
   {
-    "albumArt": "/AlbumArts/Featured_Original_Soundtrack.png",
-    "albumTitleKey": "album.genshinOST",
+    "albumArt": "/AlbumArts/3.png",
+    "albumTitleKey": "album.3",
     "songs": [
       {
-        "titleKey": "song.specialEP",
-        "videoId": "QK7ZG2JXYB4"
+        "titleKey": "song.3-1",
+        "videoId": "W9kVvPluPy4"
       },
       {
-        "titleKey": "song.shiningStarsVol5",
-        "videoId": "rnQvbUSf1TM"
+        "titleKey": "song.3-2",
+        "videoId": "LgbRN-Dh0Dw"
       },
       {
-        "titleKey": "song.meteorMiracleVol3",
-        "videoId": "q6V8_s7F-1A"
+        "titleKey": "song.3-3",
+        "videoId": "tHWQglLvr4U"
       },
       {
-        "titleKey": "song.pearlSong4Light",
-        "videoId": "a657IulU7g0"
+        "titleKey": "song.3-4",
+        "videoId": "T8S0rpmd8As"
       },
       {
-        "titleKey": "song.pearlSong4Silent",
-        "videoId": "8Is8VZ7kXCc"
+        "titleKey": "song.3-5",
+        "videoId": "Ui7L0VZqAT0"
       },
       {
-        "titleKey": "song.pearlSongSummer",
-        "videoId": "5Xj4cxvNxkk"
+        "titleKey": "song.3-6",
+        "videoId": "fFaNq--7qu4"
+      },
+      {
+        "titleKey": "song.3-7",
+        "videoId": "R0m22kEpEis"
+      },
+      {
+        "titleKey": "song.3-8",
+        "videoId": "P6B6Eq1-_wg"
+      },
+      {
+        "titleKey": "song.3-9",
+        "videoId": "2lma93X4Wzk"
+      },
+      {
+        "titleKey": "song.3-10",
+        "videoId": "u5wg0Jsg-HA"
+      },
+      {
+        "titleKey": "song.3-11",
+        "videoId": "flWG_aJpbEA"
+      },
+      {
+        "titleKey": "song.3-12",
+        "videoId": "IKUlZj9Jb74"
+      },
+      {
+        "titleKey": "song.3-13",
+        "videoId": "acAhqYmGy2Q"
+      },
+      {
+        "titleKey": "song.3-14",
+        "videoId": "orwVmkm4EGc"
+      },
+      {
+        "titleKey": "song.3-15",
+        "videoId": "871_IRW81ME"
+      }
+    ]
+  },
+  {
+    "albumArt": "/AlbumArts/4.png",
+    "albumTitleKey": "album.4",
+    "songs": [
+      {
+        "titleKey": "song.4-1",
+        "videoId": "W9kVvPluPy4"
+      },
+      {
+        "titleKey": "song.4-2",
+        "videoId": "LgbRN-Dh0Dw"
+      },
+      {
+        "titleKey": "song.4-3",
+        "videoId": "tHWQglLvr4U"
+      },
+      {
+        "titleKey": "song.4-4",
+        "videoId": "T8S0rpmd8As"
+      },
+      {
+        "titleKey": "song.4-5",
+        "videoId": "Ui7L0VZqAT0"
+      },
+      {
+        "titleKey": "song.4-6",
+        "videoId": "fFaNq--7qu4"
+      },
+      {
+        "titleKey": "song.4-7",
+        "videoId": "R0m22kEpEis"
+      },
+      {
+        "titleKey": "song.4-8",
+        "videoId": "P6B6Eq1-_wg"
+      },
+      {
+        "titleKey": "song.4-9",
+        "videoId": "2lma93X4Wzk"
+      },
+      {
+        "titleKey": "song.4-10",
+        "videoId": "u5wg0Jsg-HA"
+      },
+      {
+        "titleKey": "song.4-11",
+        "videoId": "flWG_aJpbEA"
+      },
+      {
+        "titleKey": "song.4-12",
+        "videoId": "IKUlZj9Jb74"
+      },
+      {
+        "titleKey": "song.4-13",
+        "videoId": "acAhqYmGy2Q"
+      },
+      {
+        "titleKey": "song.4-14",
+        "videoId": "orwVmkm4EGc"
+      },
+      {
+        "titleKey": "song.4-15",
+        "videoId": "871_IRW81ME"
       }
     ]
   }

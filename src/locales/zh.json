@@ -11,6 +11,9 @@
     "enquiries": "查询",
     "info": "运营者信息"
   },
+  "popup": {
+    "reloadMessage": "要完全应用语言更改，请重新加载页面。"
+  },
   "album": {
     "favorite": "我的最爱"
   }

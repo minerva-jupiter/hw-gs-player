@@ -11,21 +11,31 @@
     "enquiries": "Enquiries",
     "info": "Operator Info"
   },
+  "popup": {
+    "reloadMessage": "To fully apply the language change, reload the page."
+  },
   "album": {
     "favorite": "Favorite",
-    "album1": "Album 1",
-    "album2": "Album 2",
-    "genshinOST": "Genshin-OST (Official)"
+    "1": "The Wind and The Star Traveler",
+    "2": "City of Winds and Idylls",
+    "3": "Jade Moon Upon a Sea of Clouds",
+    "4": "The Stellar Moments"
   },
   "song": {
-    "song1": "Song 1",
-    "song2": "Song 2",
-    "songA": "Song A",
-    "specialEP": "Special EP 'Song of the Valley'",
-    "shiningStarsVol5": "Shining Stars Vol.5",
-    "meteorMiracleVol3": "Meteor Miracle Vol.3",
-    "pearlSong4Light": "Pearl Song 4: Gathering Light",
-    "pearlSong4Silent": "Pearl Song 4: Silent Song",
-    "pearlSongSummer": "Pearl Song: Summer Song"
+    "1-1": "Genshin Impact Main Theme",
+    "1-2": "Dawn Winery Theme",
+    "1-3": "A Sweet Smile",
+    "1-4": "A Storm, A Spire, and a Sanctum (Dvalin's Nest)",
+    "1-5": "Caelestinum Finale Termini",
+    "1-6": "Lone Sojourner",
+    "1-7": "A Day in Mondstadt",
+    "1-8": "Dream Aria",
+    "1-9": "Pure Sky",
+    "1-10": "The Edge of the Prairie",
+    "1-11": "A Tale of Two Dragons",
+    "1-12": "Rite of Battle",
+    "1-13": "Knighthood Excellence",
+    "1-14": "Happy Journey",
+    "1-15": "The Outlander Who Caught the Wind"
   }
 }
