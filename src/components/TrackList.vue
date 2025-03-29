@@ -11,8 +11,8 @@ const queueTitleList = computed(() => queue.get_queueTitleList());
     <table>
       <tbody>
         <tr v-for="(Title, index) in queueTitleList" :key="index">
-          <td>{{ index }}</td>
-          <td>{{ Title }}</td>
+          <td class="index">{{ String(index).padStart(3, '0') }}</td>
+          <td class="title">{{ Title }}</td>
         </tr>
       </tbody>
     </table>
@@ -20,7 +20,30 @@ const queueTitleList = computed(() => queue.get_queueTitleList());
 </template>
 
 <style scoped>
-/* default style (mobile) */
+/* default style */
+h1{
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.index{
+  font-family: "Lekton", monospace;
+  font-size: 14px;
+}
+
+.index::after {
+  content: "\00A0";
+}
+
+.title {
+  font-size: 20px;
+}
+
+table td {
+  display: table-cell;
+  vertical-align: middle; /* 上下中央揃え */
+  padding: 1px; /* セル内の余白を調整 */
+}
 
 /* 2column style (PC) */
 @media (min-aspect-ratio: 1/1) {
@@ -32,6 +55,7 @@ const queueTitleList = computed(() => queue.get_queueTitleList());
     width: calc(50vw - 60px);
     height: calc(100% - 60px);
     background: #000000;
+    font-size: 20px;
   }
 }
 </style>

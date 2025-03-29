@@ -4,7 +4,7 @@ import { ref, computed, onMounted, onUnmounted, watch, nextTick} from 'vue';
 import queue from '../queue';
 import Tracklist from './TrackList.vue';
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiRepeatOnce, mdiRepeatOff, mdiStarCheck, mdiStarPlusOutline } from '@mdi/js';
+import { mdiRepeatOnce, mdiRepeatOff, mdiStarCheck, mdiStarPlusOutline, mdiSkipPrevious, mdiSkipNext } from '@mdi/js';
 
 // define Emit event
 const emit = defineEmits(["update:isFullscreen"]);
@@ -189,13 +189,23 @@ const renderKey = queue.get_playerRenderKey();
       </div>
 
       <div class="control_box">
-      <!-- Play/Pause button -->
+        <!-- Prev button -->
+        <div class="prev-button" @click="queue.get_next()">
+          <SvgIcon type="mdi" :path="mdiSkipPrevious" />
+        </div>
+
+        <!-- Play/Pause button -->
         <button @click="togglePlay" class="play-pause-button">
           <div class="play-pause-icon" :class="{ playing: isPlaying }">
             <div class="bar bar-left"></div>
             <div class="bar bar-right"></div>
           </div>
         </button>
+
+        <!-- Next button -->
+        <div class="next-button" @click="queue.get_next()">
+          <SvgIcon type="mdi" :path="mdiSkipNext" />
+        </div>
       </div>
     </div>
 
