@@ -1,47 +1,27 @@
 <script setup lang="ts">
 import AlbumList from '../assets/AlbumsList.json';
 import queue, { type Queue } from '../queue';
+import { useI18n } from 'vue-i18n';
 
-let Albums = AlbumList;
-let favorite_list: Queue[] = [];
-if (localStorage.getItem("favorite") === null) {
-    favorite_list = [{SongName: "Favotite List is Empty", videoId: ""}];
-    console.log("Favorite List is Empty");
-}else
-{
-    favorite_list = JSON.parse(localStorage.getItem("favorite") || "");
-}
-interface Songs {
-  title:{ja: string,en: string};
-  videoId: string
-}
-let songs_from_favoriteList: Songs[] = [];
-favorite_list.map((song, ) => {
-  songs_from_favoriteList.push({title:{ja:song.SongName,en:song.SongName},videoId:song.videoId});
-})
-
-if(Albums[Albums.length -1].albumTitle.en == "FavoriteList"){
-  Albums.pop();
-}
-Albums.push({albumTitle:{en:"FavoriteList",ja:"お気に入り"}, songs:songs_from_favoriteList})
+const { t } = useI18n();
 
 function add_play_album(albumIndex: number) {
   console.log("The Album will play! The Album index is " + albumIndex);
-  const albumSongList: Queue[] = AlbumList[albumIndex].songs.map((songs) => {
-    const queueinter: Queue = {videoId: songs.videoId, SongName: songs.title.ja}
-    return queueinter;});
-  queue.add_album(albumSongList,AlbumList[albumIndex].albumTitle.ja);// *.ja will change depends on using languare
+  const albumSongList: Queue[] = AlbumList[albumIndex].songs.map((song) => {
+    const queueinter: Queue = { videoId: song.videoId, SongName: t(song.titleKey) };
+    return queueinter;
+  });
+  queue.add_album(albumSongList, t(AlbumList[albumIndex].albumTitleKey));
 }
 </script>
 
 <template>
   <div class="page">
     <div class="album-container">
-      <div v-for="(AlbumList, index) in AlbumList">
-        <button
-        v-on:click="add_play_album(index)" class="button_album">
-          <img :src=AlbumList.albumArt alt="" sizes="" srcset="">
-          <div class="album-title">{{ AlbumList.albumTitle.ja }}</div>
+      <div v-for="(Album, index) in AlbumList" :key="index">
+        <button @click="add_play_album(index)" class="button_album">
+          <img :src="Album.albumArt" alt="" />
+          <div class="album-title">{{ t(Album.albumTitleKey) }}</div>
         </button>
       </div>
     </div>

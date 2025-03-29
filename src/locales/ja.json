@@ -12,6 +12,20 @@
     "info": "運営者情報"
   },
   "album": {
-    "favorite": "お気に入り"
+    "favorite": "お気に入り",
+    "album1": "アルバム1",
+    "album2": "アルバム2",
+    "genshinOST": "原神OST (公式)"
+  },
+  "song": {
+    "song1": "曲1",
+    "song2": "曲2",
+    "songA": "曲A",
+    "specialEP": "スペシャルEP「幽谷の舟唄」",
+    "shiningStarsVol5": "輝く星星Vol.5",
+    "meteorMiracleVol3": "流星の奇跡Vol.3",
+    "pearlSong4Light": "真珠の歌4 集う光彩",
+    "pearlSong4Silent": "真珠の歌4 言葉なき歌",
+    "pearlSongSummer": "真珠の歌 真夏の歌"
   }
 }

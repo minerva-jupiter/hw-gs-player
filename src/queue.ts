@@ -3,6 +3,7 @@ This Script manages the queue for play.
 */
 
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 
 export interface Queue {
     videoId: string;
@@ -40,6 +41,8 @@ function get_next(): string | null {
 }
 
 function get_nowSong(): Queue {
+    const { t } = useI18n();
+
     const favoriteList: Queue[] = JSON.parse(localStorage.getItem("favorite") || "[]");
     for (let i = 0; i < favoriteList.length; i++) {
         if (favoriteList[i].videoId === queue.value[0]?.videoId) {
@@ -48,7 +51,12 @@ function get_nowSong(): Queue {
         }
     }
     console.log("isFavorite is " + isFavorite.value);
-    return queue.value.length > 0 ? queue.value[0] : { videoId: "", SongName: "" };
+
+    const currentSong = queue.value.length > 0 ? queue.value[0] : { videoId: "", SongName: "" };
+    return {
+        ...currentSong,
+        SongName: t(currentSong.SongName),
+    };
 }
 
 function add_album(Album: Queue[], AlbumTitle: string) {

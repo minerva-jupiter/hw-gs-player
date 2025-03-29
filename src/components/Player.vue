@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { YoutubeIframe } from '@vue-youtube/component';
-import { ref, computed, onMounted, onUnmounted, watch, nextTick} from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import queue from '../queue';
 import Tracklist from './TrackList.vue';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiRepeatOnce, mdiRepeatOff, mdiStarCheck, mdiStarPlusOutline, mdiSkipPrevious, mdiSkipNext } from '@mdi/js';
+import { useI18n } from 'vue-i18n';
 
 // define Emit event
 const emit = defineEmits(["update:isFullscreen"]);
@@ -18,12 +19,20 @@ const endTime = ref(0);
 const intervalId = ref<number | null>(null);
 const isPlaying = ref(false);
 
-// Video title
-const title = ref();
-const titleName = ref();
+// Album and song info
+const { t, locale } = useI18n();
+const albumTitle = ref(t(queue.get_albumTitle())); // 初期値を翻訳キーで設定
 
-// Album info
-let albumTitle = queue.get_albumTitle();
+// 現在の曲名をリアクティブに取得
+const songTitle = computed(() => {
+  const nowSong = queue.get_nowSong();
+  return t(nowSong.SongName); // 翻訳キーを使用して曲名を取得
+});
+
+// 言語変更時にアルバムタイトルを更新
+watch(locale, () => {
+  albumTitle.value = t(queue.get_albumTitle());
+});
 
 // Fullscreen mode
 const isFullscreen = ref(false);
@@ -40,7 +49,7 @@ const toggleFullscreen = () => {
 watch(isFullscreen, (newVal, oldVal) => {
   if (newVal !== oldVal) {
     animationClass.value = newVal ? "slide-up" : "slide-down";
-    
+
     // Remove animation class after transition
     setTimeout(() => {
       animationClass.value = "";
@@ -57,8 +66,6 @@ const togglePlay = async () => {
 // When player is ready
 const onReady = (event: { target: any }) => {
   endTime.value = Math.floor(event.target.getDuration());
-  title.value = event.target.getVideoData();
-  titleName.value = title.value['title'];
 };
 
 // Handle video state changes
@@ -80,7 +87,7 @@ const onStateChange = (event: { target: any; data: number }) => {
     isPlaying.value = false;
   }
 
-  albumTitle = queue.get_albumTitle();
+  albumTitle.value = t(queue.get_albumTitle()); // 言語変更時にアルバムタイトルを更新
 };
 
 // Format time as mm:ss
@@ -117,7 +124,7 @@ const adjustScale = async () => {
 // Add event listeners for resize and orientation change
 onMounted(() => {
   window.addEventListener("resize", adjustScale); // Recalculate scale when resizing window
-  window.addEventListener("orientationchange", adjustScale); // R-s-w changing screen orientation
+  window.addEventListener("orientationchange", adjustScale); // Recalculate scale when changing screen orientation
   adjustScale();
 });
 
@@ -138,10 +145,7 @@ const renderKey = queue.get_playerRenderKey();
   <div class="layout">
     <div 
       ref="fscontainer" 
-      :class="[
-        isFullscreen ? 'fscontainer' : 'container',
-        animationClass
-      ]" 
+      :class="[isFullscreen ? 'fscontainer' : 'container', animationClass]" 
       :key="renderKey"
     >
       <youtube-iframe
@@ -162,7 +166,7 @@ const renderKey = queue.get_playerRenderKey();
       <div class="info_box">
         <!-- Video title -->
         <div class="title" @click="toggleFullscreen">
-          {{ titleName }}
+          {{ songTitle }}
         </div>
 
         <!-- Time and album info -->
@@ -210,10 +214,7 @@ const renderKey = queue.get_playerRenderKey();
     </div>
 
     <div 
-      :class="[
-        isFullscreen ? 'fstracklist-container' : 'tracklist-container',
-        animationClass
-      ]"
+      :class="[isFullscreen ? 'fstracklist-container' : 'tracklist-container', animationClass]"
     >
       <Tracklist />
     </div>

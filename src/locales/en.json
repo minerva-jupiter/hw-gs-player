@@ -12,6 +12,20 @@
     "info": "Operator Info"
   },
   "album": {
-    "favorite": "Favorite"
+    "favorite": "Favorite",
+    "album1": "Album 1",
+    "album2": "Album 2",
+    "genshinOST": "Genshin-OST (Official)"
+  },
+  "song": {
+    "song1": "Song 1",
+    "song2": "Song 2",
+    "songA": "Song A",
+    "specialEP": "Special EP 'Song of the Valley'",
+    "shiningStarsVol5": "Shining Stars Vol.5",
+    "meteorMiracleVol3": "Meteor Miracle Vol.3",
+    "pearlSong4Light": "Pearl Song 4: Gathering Light",
+    "pearlSong4Silent": "Pearl Song 4: Silent Song",
+    "pearlSongSummer": "Pearl Song: Summer Song"
   }
 }
